@@ -20,12 +20,13 @@ serial_number=$(get_system_info "Serial")
 
 sudo apt update
 sudo apt upgrade -y
+sudo apt autoremove -y
 
 # APT installs
-sudo apt install -y
+# sudo apt install -y
 
 ## SNAP installs
-sudo snap install vlc thunderbird
+sudo snap install vlc thunderbird chromium firefox teams zoom-client telegram-desktop slack skype singlebox
 
 ## FLATPACK installs
 sudo apt install flatpak -y
@@ -37,4 +38,9 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 sudo apt-get install wukrainian 
 
 ## Add User
-sudo adduser ukraine
+newuser=ukraine
+echo "USERNAME: $newuser"
+password="$(random_password)"
+echo "PASSWORD: $password"
+sudo useradd "$newuser" -p "$password" -g sudo
+sudo passwd "$newuser"
