@@ -1,5 +1,19 @@
 #!/bin/bash
 # cf https://www.addictivetips.com/ubuntu-linux-tips/make-ubuntu-post-installation-script/
+function get_system_info(){
+	suddmidecode -t "${2:-system}" \
+	| awk -F: -v keyword=${1:-Serial}'
+		function ltrim(s) { sub(/^[ \t\r\n]+/, "", s); return s }
+		function rtrim(s) { sub(/[ \t\r\n]+$/, "", s); return s }
+		function trim(s) { return rtrim(ltrim(s)); }
+		/keyword/ {print $2}
+		'
+}
+
+manufacturer=$(get_system_info "Manufacturer")
+product_name=$(get_system_info "Product Name")
+serial_number=$(get_system_info "Serial")
+
 sudo apt update
 sudo apt upgrade -y
 
