@@ -26,6 +26,10 @@ sudo apt autoremove -y
 # sudo apt install -y
 
 ## SNAP installs
+# cf https://snapcraft.io/docs/installing-snap-on-linux-mint
+[[ -f /etc/apt/preferences.d/nosnap.pref ]] && sudo mv /etc/apt/preferences.d/nosnap.pref ~/Documents/nosnap.backup
+sudo apt update
+sudo apt install snapd
 sudo snap install vlc thunderbird chromium firefox teams zoom-client telegram-desktop slack skype singlebox
 
 ## FLATPACK installs
