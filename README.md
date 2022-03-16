@@ -1,6 +1,6 @@
-# install_ubuntu_ukraine
+# Linux for Ukraine
 
-![pforret/install_ubuntu_ukraine](assets/unsplash.ukraine.jpg)
+![Linux for Ukraine](assets/unsplash.ukraine.jpg)
 
-Script to install a laptop with Ubuntu for Ukrainian users #RefugeesWelcome
+Script to install a laptop with Linux (Ubuntu/Mint) for Ukrainian users #RefugeesWelcome
 
